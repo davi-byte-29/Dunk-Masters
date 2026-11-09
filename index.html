@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="theme-color" content="#04060f">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>Dunk Masters</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head><body>
+<div id="menu" class="scr on">
+  <h1>DUNK<span>MASTERS</span></h1>
+  <p class="sub">Basquete cabeçudo • 1 contra 1</p>
+  <button class="btn big" id="bLocal">Modo Local</button>
+  <button class="btn big alt" id="bOnline">Modo Online</button>
+  <small class="kb-only">Local: P1 = A D W F &nbsp;•&nbsp; P2 = ← → ↑ L<br>Encoste na bola para pegar • bata (F / L) para arremessar ou roubar<br>Pule perto da cesta com a bola e aperte F / L para ENTERRAR!<br>DASH: P1 = S &nbsp;•&nbsp; P2 = ↓ — corra e tire a bola da mão do outro!<br>Online: jogue contra amigos em qualquer aparelho (PC, celular ou tablet)</small>
+  <small class="tc-only">Use os botões na tela: ◀ ▶ mover • 👟 pular • ✋ arremessar/roubar • 💨 dash<br>Pule perto da cesta com a bola e toque em ✋ para ENTERRAR!<br>Modo Local = 2 jogadores no teclado • No celular, jogue pelo Modo Online</small>
+</div>
+
+<div id="online" class="scr">
+  <h2>Modo Online</h2>
+  <p class="note">Jogue entre aparelhos diferentes: PC, celular e tablet</p>
+  <div class="card">
+    <button class="btn" id="bCreate">Criar sala</button>
+    <div id="rc"><span id="rcode"></span><button class="btn alt sm" id="bShare">Compartilhar link</button></div>
+    <div class="or">ou entre em uma sala</div>
+    <input id="code" maxlength="4" placeholder="CÓDIGO" autocomplete="off" autocapitalize="characters" autocorrect="off" spellcheck="false">
+    <button class="btn alt" id="bJoin">Entrar na sala</button>
+    <div id="status"></div>
+  </div>
+  <button class="link" id="bBack">← Voltar</button>
+</div>
+
+<div id="game" class="scr">
+  <div id="wrap">
+    <canvas id="c" width="900" height="450"></canvas>
+    <div id="sb"><b id="n1">P1</b><span id="s1">0</span><em id="tm">60.0</em><span id="s2">0</span><b id="n2">P2</b></div>
+    <small id="ping"></small>
+      </div>
+  <p class="hint" id="hint"></p>
+  <p class="rot">↻ Dica: gire o aparelho na horizontal para uma tela maior</p>
+  <div id="tc">
+    <div class="pad"><button data-k="l">◀</button><button data-k="r">▶</button></div>
+    <div class="acts"><button data-k="d">💨</button><button data-k="h">✋</button><button data-k="j">👟</button></div>
+  </div>
+  <div id="end"><h2 id="eh"></h2><p id="et"></p><p id="ew">Aguardando o anfitrião reiniciar a partida...</p><button class="btn" id="bAgain">Jogar de novo</button><button class="btn alt" id="bMenu">Menu</button></div>
+</div>
+<script src="https://unpkg.com/peerjs@1.5.4/dist/peerjs.min.js"></script>
+<script src="game.js"></script>
+</body></html>
